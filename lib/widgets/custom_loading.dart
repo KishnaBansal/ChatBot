@@ -7,6 +7,7 @@ class CustomLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Lottie.asset("assets/lottie/loading.json",width: mq.width*0.47);
+    mq = MediaQuery.sizeOf(context);
+    return Lottie.asset("assets/lottie/loading.json", width: mq.width * 0.47);
   }
 }

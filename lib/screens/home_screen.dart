@@ -1,3 +1,4 @@
+import 'package:chat_bot/helper/pref.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_bot/helper/global.dart';
 import 'package:flutter/services.dart';
@@ -15,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // TODO: implement initState
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    Pref.showOnBoarding = false;
   }
 
   @override

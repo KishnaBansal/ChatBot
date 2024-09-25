@@ -9,6 +9,7 @@ class OnboardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    mq = MediaQuery.sizeOf(context);
     final _pageController = PageController();
     final list = [
       OnBoard(
