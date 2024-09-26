@@ -2,6 +2,7 @@ import 'package:chat_bot/helper/global.dart';
 import 'package:chat_bot/models/onBoard.dart';
 import 'package:chat_bot/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -84,11 +85,12 @@ class OnboardingScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   if (isLast) {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) => HomeScreen(),
-                      ),
-                    );
+                    // Navigator.of(context).pushReplacement(
+                    //   MaterialPageRoute(
+                    //     builder: (context) => HomeScreen(),
+                    //   ),
+                    // );
+                    Get.off(() => const HomeScreen());
                   } else {
                     _pageController.nextPage(
                       duration: Duration(milliseconds: 600),

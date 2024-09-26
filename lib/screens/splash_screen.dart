@@ -4,6 +4,7 @@ import 'package:chat_bot/screens/onboarding_screen.dart';
 import 'package:chat_bot/widgets/custom_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_bot/helper/global.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,11 +21,12 @@ class _SplashScreenState extends State<SplashScreen> {
 
     //Wait for some time on SplashScreen and then move to next screen
     Future.delayed(Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => Pref.showOnBoarding ? const OnboardingScreen() : const HomeScreen(),
-        ),
-      );
+      // Navigator.of(context).pushReplacement(
+      //   MaterialPageRoute(
+      //     builder: (context) => Pref.showOnBoarding ? const OnboardingScreen() : const HomeScreen(),
+      //   ),
+      // );
+      Get.off(() => Pref.showOnBoarding ? const OnboardingScreen() : const HomeScreen());
     });
   }
 

@@ -1,4 +1,5 @@
 import 'package:chat_bot/helper/pref.dart';
+import 'package:chat_bot/widgets/home_card.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_bot/helper/global.dart';
 import 'package:flutter/services.dart';
@@ -24,7 +25,33 @@ class _HomeScreenState extends State<HomeScreen> {
     //Initializng device size
     mq = MediaQuery.sizeOf(context);
     return Scaffold(
-      body: Center(child: Text("Welcome to home screen")),
+      appBar: AppBar(
+        elevation: 1,
+        centerTitle: true,
+        shadowColor: Colors.white,
+        // backgroundColor: Colors.white,
+        title: const Text(
+          appName,
+          style: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.w500, color: Colors.blue),
+        ),
+        actions: [
+          IconButton(
+            padding: EdgeInsets.only(right: 10),
+            onPressed: () {},
+            icon: Icon(
+              Icons.brightness_6,
+              size: 28,
+            ),
+          ),
+        ],
+      ),
+      body: ListView(
+        padding: EdgeInsets.symmetric(horizontal: mq.width*0.04,vertical: mq.height*0.01),
+        children: [
+          HomeCard(),
+        ],
+      ),
     );
   }
 }

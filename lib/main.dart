@@ -3,6 +3,7 @@ import 'package:chat_bot/helper/pref.dart';
 import 'package:chat_bot/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mq = MediaQuery.sizeOf(context);
-    return MaterialApp(
+    return const GetMaterialApp(
+      title: appName,
       home: SplashScreen(),
     );
   }
