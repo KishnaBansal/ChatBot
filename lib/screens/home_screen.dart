@@ -1,8 +1,10 @@
 import 'package:chat_bot/helper/pref.dart';
+import 'package:chat_bot/models/home_type.dart';
 import 'package:chat_bot/widgets/home_card.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_bot/helper/global.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -47,11 +49,14 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: mq.width*0.04,vertical: mq.height*0.01),
-        children: [
-          HomeCard(),
-        ],
-      ),
+              padding: EdgeInsets.symmetric(
+                  horizontal: mq.width * 0.04, vertical: mq.height * 0.01),
+              children: HomeType.values
+                  .map((e) => HomeCard(
+                        homeType: e,
+                      ))
+                  .toList())
+          
     );
   }
 }
